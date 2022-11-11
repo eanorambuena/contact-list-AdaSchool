@@ -31,7 +31,7 @@ const foundContact = (contactList, contactFirstName, contactLastName) => {
 }
 
 function printContacts(contactList) {
-    contactString = contactList.join(", ");
+    const contactString = contactList.join(", ");
     console.log(contactString);
 }
 
