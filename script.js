@@ -1,18 +1,24 @@
-contactList = [
-    "Ana Sandoval",
-    "Miguel Bosé",
-    "Elmer Figueroa",
-    "Loreto Contreras"
-]
-
-const addContact = (contactList, contactName) => {
-    contactList.push(contactName);
+const addContact = (
+        contactList, contactId, contactFirstName, contactLastName,
+        contactPhoneNumber, contactLocations, contactCity, contactAddress
+    ) => {
+    let contact = {
+        id:             contactId,     
+        nombres:        contactFirstName,
+        apellidos:      contactLastName,
+        teléfono:       contactPhoneNumber,
+        ubicaciones:    contactLocations,
+        ciudad:         contactCity,
+        dirección:      contactAddress
+    }
+    contactList.push(contact);
 }
 
-const removeContact = (contactList, contactName) => {
+const removeContact = (contactList, contactFirstName, contactLastName) => {
     let resultIndex = -1;
     for (let index = 0; index < contactList.length; index ++) {
-        if (contactList[index] == contactName) {
+        if (contactList[index].nombres == contactFirstName
+            && contactList[index].apellidos == contactLastName) {
             resultIndex = index;
         }
     }
